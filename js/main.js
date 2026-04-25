@@ -44,6 +44,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Modal (e-book) ---
+  const openModal = (modal) => {
+    if (!modal) return;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Lazy-load iframe src to avoid loading until modal is opened
+    const iframe = modal.querySelector('iframe[data-form-src]');
+    if (iframe) {
+      const src = iframe.getAttribute('data-form-src');
+      const placeholder = modal.querySelector('.modal-form-placeholder');
+      if (src && src.trim() !== '') {
+        if (iframe.src !== src) iframe.src = src;
+        iframe.classList.add('active');
+        if (placeholder) placeholder.style.display = 'none';
+      } else {
+        // No form configured yet — show fallback (WhatsApp)
+        iframe.style.display = 'none';
+        if (placeholder) placeholder.style.display = 'block';
+      }
+    }
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  // Open modal triggers
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modal = document.getElementById(btn.getAttribute('data-modal'));
+      openModal(modal);
+    });
+  });
+
+  // Close modal triggers
+  document.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', () => {
+      const modal = el.closest('.modal');
+      closeModal(modal);
+    });
+  });
+
+  // ESC closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const active = document.querySelector('.modal.active');
+      if (active) closeModal(active);
+    }
+  });
+
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {

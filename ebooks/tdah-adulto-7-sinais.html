@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDAH no Adulto: 7 Sinais que Passam Despercebidos | Dra. Sofia Teixeira Gomes</title>
+<meta name="description" content="E-book gratuito: 7 sinais de TDAH no adulto que passam despercebidos, com base em neurociência. Por Dra. Sofia Teixeira Gomes — Médica em Saúde Mental.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sage: #7A8B6F;
+    --sage-light: #A3B18A;
+    --sage-dark: #5C6B4F;
+    --cream: #FAF6F0;
+    --cream-dark: #F0E9DD;
+    --gold: #C4A35A;
+    --text-dark: #2C2C2C;
+    --text-medium: #555555;
+    --text-light: #777777;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 4rem 4rem;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  }
+
+  /* === Capa === */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%);
+    color: #fff;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(196,163,90,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .cover-content { z-index: 1; }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cover h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .cover-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 3rem;
+    max-width: 80%;
+  }
+
+  .cover-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    z-index: 1;
+  }
+
+  .cover-author .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .cover-author .role {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .cover-author .meta {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 0.2rem;
+  }
+
+  .cover-decoration {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+
+  /* === Headings === */
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .page h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--sage-dark);
+  }
+
+  .page h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    color: var(--sage-dark);
+    border-bottom: 2px solid var(--cream-dark);
+    padding-bottom: 0.6rem;
+  }
+
+  .page h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  .page p {
+    color: var(--text-medium);
+    font-size: 1.02rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .page p strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  .page p em {
+    color: var(--sage-dark);
+    font-style: italic;
+  }
+
+  /* Sinais (numbered sections) */
+  .sinal-number {
+    display: inline-block;
+    background: var(--sage);
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .sinal-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .neuroscience-box {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--sage);
+  }
+
+  .neuroscience-box .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--sage-dark);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .neuroscience-box p {
+    margin-bottom: 0.5rem;
+    font-size: 0.98rem;
+  }
+
+  .reflection {
+    background: linear-gradient(135deg, rgba(122,139,111,0.08), rgba(196,163,90,0.08));
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: var(--text-medium);
+    font-size: 1rem;
+  }
+
+  .reflection .label {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Lists */
+  ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: var(--text-medium);
+  }
+
+  ul li {
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+  }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 1rem;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+    color: #fff;
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .final-cta h2 {
+    color: #fff;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+
+  .final-cta p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  .final-cta .contact-item {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .final-cta .signature {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .final-cta .signature .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .final-cta .signature .credentials {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  /* Print styles for PDF */
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; max-width: 100%; padding: 2rem 2.5rem; }
+    .cover { min-height: 100vh; page-break-after: always; }
+    .sinal-section { page-break-before: always; }
+    .final-cta { page-break-before: always; }
+    h2 { page-break-after: avoid; }
+    p, .neuroscience-box, .reflection { page-break-inside: avoid; }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <span class="cover-badge">E-book Gratuito</span>
+
+  <div class="cover-content">
+    <h1>TDAH no Adulto</h1>
+    <h2>7 Sinais que Passam Despercebidos</h2>
+    <p class="cover-subtitle">E o que a neurociência diz sobre cada um deles.</p>
+  </div>
+
+  <div class="cover-author">
+    <span class="name">Dra. Sofia Teixeira Gomes</span>
+    <span class="role">Médica em Saúde Mental</span>
+    <span class="meta">CRM-MS 14359 · Residente em Psiquiatria · @sofiatgomes</span>
+  </div>
+
+  <div class="cover-decoration"></div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="page">
+  <h1>Antes de começar</h1>
+  <p>Você abriu este e-book por um motivo. Talvez tenha se reconhecido em algo que leu por aí. Talvez alguém próximo tenha sugerido. Talvez a sensação de que <em>"alguma coisa não se encaixa"</em> venha te acompanhando há tempo demais para ignorar.</p>
+  <p>Você não vai encontrar aqui um teste diagnóstico — diagnóstico se faz em consulta, com história completa e olhar treinado. O que você vai encontrar são <strong>sete sinais que a neurociência reconhece como marcadores frequentes do TDAH no adulto</strong> — sinais que muitas vezes passam despercebidos, especialmente em mulheres, em pessoas com inteligência acima da média, e em quem aprendeu a compensar com esforço redobrado a vida inteira.</p>
+  <p>Se vários destes sinais ressoarem com a sua experiência, vale uma avaliação médica especializada. O TDAH no adulto é uma das condições mais subdiagnosticadas e mais tratáveis da psiquiatria.</p>
+  <p>Boa leitura.</p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Por que tantos adultos nunca foram diagnosticados?</h2>
+  <p>O TDAH foi por décadas considerado uma condição exclusivamente infantil — uma criança hiperativa, geralmente um menino, que não parava na cadeira. Esse estereótipo deixou de fora milhões de adultos cujos sintomas se apresentam de outra forma:</p>
+  <ul>
+    <li><strong>Mulheres</strong> que aprenderam a internalizar a inquietação e compensaram com perfeccionismo e esforço.</li>
+    <li><strong>Adultos com alto QI</strong>, que conseguiram passar pela escola sem grandes prejuízos visíveis — mas que sentem o peso do TDAH na vida adulta, quando as demandas se multiplicam.</li>
+    <li><strong>Pessoas cuidadosas e ansiosas</strong>, cujos sintomas foram lidos como ansiedade ou depressão recorrente — quando, na verdade, eram TDAH gerando essas comorbidades.</li>
+  </ul>
+  <p>A neurociência de hoje é clara: <strong>o TDAH é uma condição neurodesenvolvimental crônica</strong>, com herdabilidade de 70-80%, alterações funcionais nos sistemas dopaminérgico e noradrenérgico do córtex pré-frontal, e dessintonia entre redes cerebrais (modo padrão x controle executivo).</p>
+  <p>Não é falta de disciplina. Não é preguiça. Não é fraqueza de caráter.</p>
+  <p>É um cérebro que funciona de forma diferente — e que responde muito bem ao cuidado certo.</p>
+</section>
+
+<!-- SIGNAL 1 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 1</span>
+  <h1>Tempo cego</h1>
+  <p class="sinal-quote">"Você não sente o tempo passar — ou sente, mas o seu corpo não responde."</p>
+  <p>Você combina de sair em 20 minutos e, quando vê, já se passou uma hora. Subestima quanto tempo uma tarefa vai levar. Atrasa para compromissos importantes não por descaso, mas porque o tempo, para você, não é uma sequência linear que se sente — é uma abstração que precisa ser constantemente verificada no relógio.</p>
+  <p>Especialistas chamam isso de <strong>"time blindness"</strong> — cegueira temporal. É um dos marcadores mais consistentes do TDAH no adulto.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>A percepção de duração temporal depende de circuitos no córtex pré-frontal e nos gânglios da base — exatamente as regiões com função alterada no TDAH. A dopamina, que regula esses circuitos, está disfuncional. O resultado é uma relação distorcida com o tempo: ou o tempo voa (no hiperfoco), ou se arrasta (em tarefas que não engajam o sistema de recompensa).</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você passou a vida ouvindo "você não respeita o tempo dos outros"? Talvez o tempo, para você, simplesmente não funcione do mesmo jeito.
+  </div>
+</section>
+
+<!-- SIGNAL 2 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 2</span>
+  <h1>Disforia sensível à rejeição</h1>
+  <p class="sinal-quote">"Uma crítica pequena te derruba por dias. Um silêncio te faz construir histórias inteiras de rejeição."</p>
+  <p>Você é a pessoa que relê uma mensagem cinco vezes para ver se "ficou ofensiva". Que entra em parafuso quando alguém parece distante. Que evita confrontos não por covardia, mas porque a dor emocional de uma desaprovação parece desproporcionalmente grande — quase física.</p>
+  <p>Isso tem nome: <strong>Disforia Sensível à Rejeição (RSD — Rejection Sensitive Dysphoria)</strong>. Não é um diagnóstico oficial no DSM, mas é um dos achados clínicos mais reconhecidos no TDAH no adulto, especialmente em mulheres.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>O cérebro com TDAH tem alterações na regulação emocional — principalmente nos circuitos amígdala-córtex pré-frontal. A intensidade emocional é genuína, biológica, real. Não é "drama". O sistema que deveria modular a resposta emocional simplesmente não consegue frear a tempo.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você se sente "demais"? Sente que reage com mais intensidade do que os outros parecem reagir? Não é fraqueza. É um sistema nervoso que está vivendo as coisas em alta definição — sem conseguir baixar o volume.
+  </div>
+</section>
+
+<!-- SIGNAL 3 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 3</span>
+  <h1>Procrastinação paradoxal</h1>
+  <p class="sinal-quote">"Você só consegue fazer as coisas sob pressão extrema. Antes disso, é uma luta interna que ninguém vê."</p>
+  <p>Você sabe que precisa fazer. Você quer fazer. Você se cobra por não estar fazendo. E ainda assim, você não faz — até a véspera, até o último minuto, até a iminência do desastre. Aí, milagrosamente, sob a adrenalina do prazo, você consegue. E geralmente faz bem.</p>
+  <p>Aí vem a culpa: <em>"Por que não comecei antes? Por que sou assim?"</em></p>
+  <p>Isso não é falta de disciplina. É <strong>disfunção executiva</strong> — o coração do TDAH.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>O córtex pré-frontal precisa de níveis adequados de dopamina e noradrenalina para iniciar uma tarefa que não é intrinsecamente recompensadora. No TDAH, esses neurotransmissores não estão suficientemente disponíveis. O cérebro literalmente não tem o "combustível" para começar — até que a urgência do prazo eleve a noradrenalina o bastante para destravar.</p>
+    <p>Você não está "esperando inspiração". Você está esperando seu cérebro produzir a química necessária para executar.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você passou anos achando que era preguiçoso? E se o que você chama de preguiça for, na verdade, um sistema executivo que precisa de outro tipo de suporte?
+  </div>
+</section>
+
+<!-- SIGNAL 4 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 4</span>
+  <h1>Hiperfoco que esgota</h1>
+  <p class="sinal-quote">"Quando algo te interessa, o mundo desaparece. Você esquece de comer, de beber água, de ir ao banheiro. Horas viram minutos. E depois, o colapso."</p>
+  <p>Existe uma ideia equivocada de que TDAH é "não conseguir prestar atenção". A realidade é mais sutil: o cérebro com TDAH tem dificuldade de <strong>regular</strong> a atenção — não consegue distribuí-la adequadamente. Em tarefas pouco estimulantes, a atenção evapora. Em tarefas que engajam o sistema de recompensa, ela fica presa em um nível de intensidade que outros cérebros raramente alcançam.</p>
+  <p>Isso é o <strong>hiperfoco</strong>. E ele é, ao mesmo tempo, um superpoder e uma armadilha.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>Quando uma atividade libera dopamina suficiente — porque é nova, urgente, criativa, desafiadora — o cérebro com TDAH "trava" naquela atividade. A rede de modo padrão se silencia. A rede de controle executivo dispara. E o resultado pode ser de extraordinária produtividade — seguida de exaustão profunda, porque o sistema operou em sobrecarga.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você é capaz de produzir em horas o que outros levam dias para fazer — quando a maré está certa? E é capaz, em outros momentos, de não conseguir começar uma tarefa simples por dias? Esse contraste não é incoerência. É TDAH.
+  </div>
+</section>
+
+<!-- SIGNAL 5 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 5</span>
+  <h1>Fadiga de decisão</h1>
+  <p class="sinal-quote">"Escolher o que comer, o que vestir, qual filme assistir — coisas pequenas — te esgotam mental e fisicamente."</p>
+  <p>Você acha estranho como suas amigas conseguem decidir um pedido em dois minutos no restaurante. Você lê o cardápio inteiro, três vezes, e ainda fica em dúvida. No fim do dia, decisões mínimas — "água ou suco?" — provocam uma irritação que parece desproporcional.</p>
+  <p>Isso se chama <strong>fadiga de decisão</strong> — e é especialmente intensa no TDAH adulto.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>A tomada de decisão requer <strong>função executiva</strong> — a capacidade de avaliar opções, projetar consequências, comparar valores. No TDAH, essa função está sob estresse constante. Cada microdecisão consome um recurso que já é limitado. No final do dia, esse recurso simplesmente se esgota.</p>
+    <p>Por isso muitos adultos com TDAH adotam, intuitivamente, "uniformes mentais": comem sempre o mesmo, usam sempre as mesmas roupas, criam rotinas rígidas. Não é falta de criatividade — é proteção do sistema executivo.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você se sente exausto no fim do dia, sem ter feito "nada de mais"? Essa exaustão pode estar nos micro-esforços invisíveis que outros cérebros nem percebem.
+  </div>
+</section>
+
+<!-- SIGNAL 6 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 6</span>
+  <h1>A vida em "modo extremo"</h1>
+  <p class="sinal-quote">"Você não tem um meio-termo. Ou está em superprodução, ou em colapso."</p>
+  <p>Por semanas, você é uma máquina: trabalha, treina, cozinha, mantém a casa, responde mensagens, está presente em tudo. Aí, sem aviso, vem a queda. Você não consegue mais. Cancela compromissos. A casa vira bagunça. Você se isola. Você se cobra. Você se promete que da próxima vez vai "manter o ritmo".</p>
+  <p>Mas a próxima vez sempre repete o mesmo padrão.</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>O cérebro com TDAH tem dificuldade de <strong>autorregulação</strong> — a capacidade de calibrar esforço de forma sustentada. A dopamina disfuncional gera ciclos de estimulação intensa (quando algo engaja) e queda profunda (quando o estímulo cessa). Sem o suporte certo, esse ciclo se torna a forma como você vive — não por escolha, mas porque o sistema não foi desenhado para o modo "constante".</p>
+    <p>Isso costuma vir junto de <strong>burnout recorrente</strong>, ansiedade, episódios depressivos. Muitas pessoas chegam ao consultório procurando tratamento para depressão — e o que está por trás é TDAH não diagnosticado.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Você reconhece esse padrão? A vida vivida em ondas, com picos altos e vales profundos? Existe outra forma — mas ela exige reconhecer o que está acontecendo no seu sistema.
+  </div>
+</section>
+
+<!-- SIGNAL 7 -->
+<section class="page sinal-section">
+  <span class="sinal-number">Sinal 7</span>
+  <h1>A culpa crônica de não corresponder ao próprio potencial</h1>
+  <p class="sinal-quote">"No fundo, você sempre soube que era capaz de mais. E carrega o peso de não ter chegado lá."</p>
+  <p>Esse é, talvez, o sinal mais doloroso e mais silencioso do TDAH no adulto. A sensação persistente de que existe uma versão sua — mais organizada, mais consistente, mais realizada — que você nunca conseguiu acessar de forma estável. As pessoas dizem que você é inteligente, talentoso, criativo. Mas você sente que está sempre aquém.</p>
+  <p>Você se compara. Se cobra. Se pune. E essa autocrítica, com o tempo, vira uma narrativa internalizada de "não sou suficiente".</p>
+
+  <div class="neuroscience-box">
+    <span class="label">O que a neurociência mostra</span>
+    <p>Décadas de pesquisa em TDAH adulto mostram que a maioria dos pacientes carrega o que se chama de <strong>trauma de desempenho crônico</strong> — o acúmulo de pequenos e grandes momentos em que o cérebro com TDAH não conseguiu corresponder às expectativas, internalizando isso como falha pessoal.</p>
+    <p>Não é falha pessoal. Nunca foi. É um cérebro que tentou, com os recursos que tinha, num mundo que não foi feito pensando nele.</p>
+  </div>
+
+  <div class="reflection">
+    <span class="label">Reflexão</span>
+    Quanto da sua autocrítica é, na verdade, raiva por anos de luta sem entendimento? Receber o diagnóstico — e o tratamento certo — costuma ser, para muitos pacientes, o início de um processo de <strong>reconciliação consigo mesmo</strong>. Antes de qualquer melhora prática, vem o alívio de finalmente entender.
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="page">
+  <h1>E agora?</h1>
+  <p>Se você reconheceu sua história em vários destes sinais, <strong>você não está sozinho — e não está condenado a esse padrão</strong>.</p>
+  <p>O TDAH no adulto é uma das condições mais bem estudadas e mais tratáveis da psiquiatria. O tratamento certo — que combina farmacologia precisa, intervenções neurobiológicas e suporte para construir uma vida que respeite seu cérebro — pode transformar profundamente sua experiência.</p>
+  <p>Mas o primeiro passo é uma avaliação médica especializada. O diagnóstico de TDAH no adulto exige rastreio cuidadoso da história, exclusão de outras condições, avaliação de comorbidades. Não é diagnóstico de checklist. É olhar treinado para o conjunto da sua vida.</p>
+  <p>Se você quer dar esse passo, estou aqui.</p>
+
+  <div class="final-cta">
+    <h2>Próximo passo</h2>
+    <p>Atendimento online para todo o Brasil. Avaliação completa, sem lista de espera, sem julgamento.</p>
+
+    <div class="contact-item">📲 WhatsApp: <a href="https://wa.me/5585997304853">(85) 99730-4853</a></div>
+    <div class="contact-item">📸 Instagram: <a href="https://www.instagram.com/sofiatgomes/">@sofiatgomes</a></div>
+
+    <div class="signature">
+      <div class="name">Dra. Sofia Teixeira Gomes</div>
+      <div class="credentials">Médica em Saúde Mental · CRM-MS 14359 · Residente em Psiquiatria</div>
+    </div>
+  </div>
+
+  <p class="disclaimer">Este e-book tem finalidade exclusivamente educativa. Não substitui avaliação médica individualizada. © 2025 Sofia Teixeira Gomes — Todos os direitos reservados.</p>
+</section>
+
+</body>
+</html>
