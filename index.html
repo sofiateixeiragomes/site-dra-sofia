@@ -212,45 +212,30 @@
             <li>Quando vale buscar avaliação especializada</li>
           </ul>
 
-          <button class="btn btn-primary ebook-cta-btn" data-modal="ebook-modal">
-            📥 Baixar e-book gratuito
-          </button>
-          <p class="ebook-disclaimer">Basta informar seu nome e e-mail. Sem spam.</p>
+          <!--
+            CONFIGURAR FORMSPREE:
+            1) Criar conta grátis em https://formspree.io
+            2) Criar novo formulário, copiar o endpoint (ex: https://formspree.io/f/xpzgaqab)
+            3) Substituir "SEU_ENDPOINT_AQUI" abaixo pelo endpoint completo
+          -->
+          <form class="ebook-form"
+                action="https://formspree.io/f/SEU_ENDPOINT_AQUI"
+                method="POST">
+            <div class="ebook-form-row">
+              <input type="text" name="nome" placeholder="Seu nome" required aria-label="Seu nome">
+              <input type="email" name="email" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail">
+            </div>
+            <input type="hidden" name="_subject" value="Novo lead — E-book TDAH no Adulto">
+            <input type="hidden" name="_next" value="https://sofiateixeiragomes.github.io/site-dra-sofia/obrigado-ebook.html">
+            <button type="submit" class="btn btn-primary ebook-cta-btn">
+              📥 Baixar e-book gratuito
+            </button>
+            <p class="ebook-disclaimer">Sem spam. Você recebe o e-book na hora e, ocasionalmente, conteúdos sobre saúde mental.</p>
+          </form>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Modal E-book -->
-  <div class="modal" id="ebook-modal" aria-hidden="true">
-    <div class="modal-overlay" data-close-modal></div>
-    <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-      <button class="modal-close" data-close-modal aria-label="Fechar">&times;</button>
-      <div class="modal-header">
-        <h3 id="modal-title">Receba seu e-book</h3>
-        <p>Preencha abaixo e o e-book chega pra você na hora.</p>
-      </div>
-      <div class="modal-body">
-        <!-- Substituir o iframe abaixo pelo embed do Google Forms quando estiver pronto -->
-        <iframe
-          id="ebook-form-iframe"
-          src="about:blank"
-          data-form-src=""
-          width="100%"
-          height="500"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0">
-          Carregando formulário...
-        </iframe>
-        <div class="modal-form-placeholder">
-          <p><strong>📋 Formulário em configuração</strong></p>
-          <p>O Google Forms ainda não foi conectado. Por enquanto, entre em contato direto:</p>
-          <a href="https://wa.me/5585997304853?text=Ol%C3%A1!%20Quero%20receber%20o%20e-book%20sobre%20TDAH%20no%20Adulto." class="btn btn-primary" target="_blank" style="margin-top:1rem;">💬 Pedir e-book pelo WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Depoimentos -->
   <section class="testimonials" id="depoimentos">
