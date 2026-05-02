@@ -44,6 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Tracking de cliques no WhatsApp (conversão Google Ads) ---
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      // Identifica origem do clique pra segmentar relatórios
+      let origem = 'outro';
+      if (link.classList.contains('whatsapp-float')) origem = 'botao_flutuante';
+      else if (link.classList.contains('nav-cta')) origem = 'navbar';
+      else if (link.classList.contains('btn-primary')) origem = 'cta_principal';
+      else if (link.closest('.cta-section')) origem = 'cta_final';
+      else if (link.closest('.thanks-next-step')) origem = 'pagina_obrigado';
+      else if (link.closest('.specialty-hero')) origem = 'hero_especialidade';
+      else if (link.closest('.hero')) origem = 'hero_home';
+
+      // Evento gtag (Google Ads + GA via GTM podem ouvir)
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          'origem_clique': origem,
+          'page_path': window.location.pathname
+        });
+      }
+
+      // Push para dataLayer (pra usar como trigger no GTM se quiser)
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'click_whatsapp',
+        origem_clique: origem,
+        page_path: window.location.pathname
+      });
+    });
+  });
+
   // --- E-book form (Brevo) ---
   const ebookForm = document.getElementById('ebook-form');
   if (ebookForm) {
