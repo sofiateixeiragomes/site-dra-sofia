@@ -233,21 +233,17 @@
             <li>Protocolo de 3 pilares para recuperar o foco</li>
           </ul>
 
-          <!--
-            CONFIGURAR FORMSPREE:
-            1) Criar conta grátis em https://formspree.io
-            2) Criar novo formulário, copiar o endpoint (ex: https://formspree.io/f/xpzgaqab)
-            3) Substituir "SEU_ENDPOINT_AQUI" abaixo pelo endpoint completo
-          -->
+          <!-- Formulário envia direto pra lista do Brevo (Newsletter) -->
           <form class="ebook-form"
-                action="https://formspree.io/f/maqakqjy"
-                method="POST">
+                id="ebook-form"
+                data-brevo-action="https://a3e3e2c8.sibforms.com/serve/MUIFAMG6pO9RMbOLiI-SjBlQWJdLc_d3DjtdcVy3xAcqzEedbGuSpGP9UMFedBJqK9aZsDBobTvuHc_z48-kBL_-au5S1OI_q6T18byGKpsgRLdQLJkO68yY0R2Pavcs3OpyVvUCEZvvb5ZeGWa-SLn3z06_jis2-RUWHPAjE7rvHWSzTl3zfaKoxGQsEI9B783yViSFNkjjbcFhGA=="
+                data-redirect="obrigado-ebook.html">
             <div class="ebook-form-row">
-              <input type="text" name="nome" placeholder="Seu nome" required aria-label="Seu nome">
-              <input type="email" name="email" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail">
+              <input type="email" name="EMAIL" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail">
             </div>
-            <input type="hidden" name="_subject" value="Seu e-book Sobrecarga Digital chegou ✨">
-            <input type="hidden" name="_next" value="https://sofiateixeiragomes.github.io/site-dra-sofia/obrigado-ebook.html">
+            <!-- Honeypot anti-bot do Brevo (deve ficar vazio) -->
+            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="locale" value="pt">
             <button type="submit" class="btn btn-primary ebook-cta-btn">
               📥 Baixar e-book gratuito
             </button>

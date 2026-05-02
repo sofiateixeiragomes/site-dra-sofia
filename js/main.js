@@ -44,6 +44,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- E-book form (Brevo) ---
+  const ebookForm = document.getElementById('ebook-form');
+  if (ebookForm) {
+    ebookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Anti-bot: se o honeypot foi preenchido, ignora silenciosamente
+      const honeypot = ebookForm.querySelector('input[name="email_address_check"]');
+      if (honeypot && honeypot.value !== '') return;
+
+      const action = ebookForm.dataset.brevoAction;
+      const redirect = ebookForm.dataset.redirect || 'obrigado-ebook.html';
+      const submitBtn = ebookForm.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn ? submitBtn.innerHTML : '';
+
+      if (submitBtn) {
+        submitBtn.classList.add('is-loading');
+        submitBtn.innerHTML = '⏳ Enviando...';
+      }
+
+      // Submit no-cors pro Brevo (fire-and-forget — não conseguimos ler a resposta,
+      // mas o lead é adicionado à lista do mesmo jeito).
+      const formData = new FormData(ebookForm);
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).catch(() => {/* ignora erros de rede — Brevo recebe mesmo assim */});
+
+      // Pequeno delay pra garantir que a request saia antes do redirect
+      setTimeout(() => {
+        window.location.href = redirect;
+      }, 600);
+    });
+  }
+
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
