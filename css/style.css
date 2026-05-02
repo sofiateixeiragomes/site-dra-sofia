@@ -1067,6 +1067,17 @@ section {
   max-width: 800px;
 }
 
+.faq.home-faq {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.faq.home-faq .faq-item {
+  background: var(--cream);
+  box-shadow: none;
+  border: 1px solid var(--cream-dark);
+}
+
 .faq-item {
   background: var(--white);
   border-radius: var(--radius);
