@@ -36,7 +36,7 @@ Por que duas? A maioria dos pacientes em saúde mental não decide agendar na pr
 | Atendimento | 100% online (todo o Brasil) via videochamada |
 | Tipo de Campanha | Google Search (Rede de Pesquisa apenas) |
 | Landing Page | `https://sofiateixeiragomes.github.io/site-dra-sofia/` |
-| WhatsApp | (85) 99730-4853 |
+| WhatsApp | (67) 98119-8225 |
 | **Orçamento sugerido inicial** | **R$ 40/dia (R$ 1.200/mês)** |
 | CPC médio estimado | R$ 4,00 a R$ 7,00 (psiquiatria é competitivo) |
 | Meta inicial | Coletar 50 conversões em 30 dias para otimização automática |
@@ -307,7 +307,7 @@ remédio, medicamento, bula, genérico, posologia
 | **Sitelinks** (mín. 4) | "Sobre a Dra. Sofia" → `/#sobre` · "Especialidades" → `/#especialidades` · "Como Funciona" → `/#como-funciona` · "E-book Grátis" → `/#ebook` |
 | **Frases de destaque** (4) | "Atendimento Humanizado" · "Online Todo Brasil" · "CRM-MS 14359" · "Sem Lista de Espera" |
 | **Snippets estruturados** (Tipo: "Serviços") | Depressão · Ansiedade · TDAH · Bipolar · Dependência Química · Esquizofrenia |
-| **Chamada (telefone)** | (85) 99730-4853 — só ativar em mobile |
+| **Chamada (telefone)** | (67) 98119-8225 — só ativar em mobile |
 | **Imagens** | Foto profissional da Dra. Sofia + capa do e-book |
 | **Promoção** (opcional) | "E-book grátis com cadastro" |
 

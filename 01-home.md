@@ -26,7 +26,7 @@ O cérebro é o órgão mais complexo do universo conhecido. Mas você não é s
 
 Aqui, a neurociência e a escuta humana caminham juntas. Porque tratar bem é entender a biologia *e* a vida que pulsa por trás dela.
 
-**`[BOTÃO PRINCIPAL — CTA WHATSAPP: 💬 Agendar minha primeira consulta → https://wa.me/5585997304853]`**
+**`[BOTÃO PRINCIPAL — CTA WHATSAPP: 💬 Agendar minha primeira consulta → https://wa.me/5567981198225]`**
 
 **`[BOTÃO SECUNDÁRIO: Como funciona o atendimento ↓]`**
 
@@ -74,7 +74,7 @@ O atendimento é online, por videochamada segura. Você pode estar em qualquer c
 **Passo 3 — Um plano construído para você, não para um diagnóstico**
 Depois da avaliação, traçamos juntos um caminho terapêutico que considera sua biologia, sua história e o que faz sentido para a sua vida. Acompanhamento próximo, retornos ágeis, escuta real.
 
-**`[BOTÃO: 💬 Quero agendar minha consulta → https://wa.me/5585997304853]`**
+**`[BOTÃO: 💬 Quero agendar minha consulta → https://wa.me/5567981198225]`**
 
 ---
 
@@ -124,7 +124,7 @@ Manejo farmacológico cuidadoso, escuta atenta à pessoa — não apenas ao diag
 
 ---
 
-**`[BOTÃO CTA CENTRAL: 💬 Agendar avaliação → https://wa.me/5585997304853]`**
+**`[BOTÃO CTA CENTRAL: 💬 Agendar avaliação → https://wa.me/5567981198225]`**
 
 ---
 
@@ -161,7 +161,7 @@ Manejo farmacológico cuidadoso, escuta atenta à pessoa — não apenas ao diag
 📍 **Modalidade:** Atendimento 100% online — sem local físico (para todo o Brasil)
 
 📲 **WhatsApp / Agendamento:**
-[(85) 99730-4853](https://wa.me/5585997304853)
+[(67) 98119-8225](https://wa.me/5567981198225)
 
 📸 **Instagram:** [@sofiatgomes](https://www.instagram.com/sofiatgomes/)
 
@@ -171,7 +171,7 @@ Manejo farmacológico cuidadoso, escuta atenta à pessoa — não apenas ao diag
 - [Início](#)
 - [Sobre](#sobre)
 - [Especialidades](#especialidades)
-- [Agendar Consulta](https://wa.me/5585997304853)
+- [Agendar Consulta](https://wa.me/5567981198225)
 
 ---
 
