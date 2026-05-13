@@ -1011,6 +1011,14 @@ section {
   max-width: 700px;
 }
 
+.specialty-hero .hero-intro {
+  max-width: 700px;
+  margin-top: 1rem;
+  font-size: 1.02rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
 /* --- Specialty Content --- */
 .specialty-content {
   background: var(--white);
@@ -1301,7 +1309,9 @@ section {
 
   .hero { min-height: auto; padding-top: 7rem; padding-bottom: 3rem; }
   .specialties-grid { grid-template-columns: 1fr; }
+  .specialty-hero { padding-top: 6rem; padding-bottom: 2.5rem; }
   .specialty-hero h1 { font-size: 1.8rem; }
+  .specialty-hero .hero-intro { font-size: 0.95rem; margin-top: 0.6rem; }
 
   section { padding: 3.5rem 0; }
 }
