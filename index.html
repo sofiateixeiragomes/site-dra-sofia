@@ -474,5 +474,18 @@
   </a>
 
   <script src="js/main.js"></script>
+
+    <!-- Google Ads Conversion Tracking - WhatsApp Click -->
+    <script>
+          document.addEventListener('click', function(e) {
+                  var link = e.target.closest('a[href*="wa.me"]');
+                  if (link && typeof gtag === 'function') {
+                            gtag('event', 'conversion', {
+                                        'send_to': 'AW-11124369234/gxQ4COLSmaYcENLOwbgp'
+                            });
+                  }
+          });
+    </script>
+    </script>
 </body>
 </html>
