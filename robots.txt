@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sofiateixeiragomes.com.br/sitemap.xml
