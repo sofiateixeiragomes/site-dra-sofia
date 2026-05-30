@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Artigos | Dra. Sofia Teixeira Gomes — Médica em saúde mental</title>
+  <meta name="description" content="Reflexões sobre saúde mental, psiquiatria, fé e cuidado integral. Conteúdo autoral da Dra. Sofia Teixeira Gomes, médica em saúde mental." />
+
+  <link rel="canonical" href="https://sofiateixeiragomes.com.br/artigos/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Artigos | Dra. Sofia Teixeira Gomes" />
+  <meta property="og:description" content="Reflexões sobre saúde mental, psiquiatria e cuidado integral." />
+  <meta property="og:url" content="https://sofiateixeiragomes.com.br/artigos/" />
+  <meta property="og:image" content="https://sofiateixeiragomes.com.br/img/sofia-principal.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Artigos | Dra. Sofia Teixeira Gomes" />
+  <meta name="twitter:description" content="Reflexões sobre saúde mental, psiquiatria e cuidado integral." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Artigos",
+    "description": "Reflexões sobre saúde mental, psiquiatria, fé e cuidado integral.",
+    "url": "https://sofiateixeiragomes.com.br/artigos/",
+    "inLanguage": "pt-BR",
+    "author": {
+      "@type": "Physician",
+      "name": "Sofia Teixeira Gomes",
+      "url": "https://sofiateixeiragomes.com.br/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --cor-texto: #1a1a1a;
+      --cor-texto-suave: #4a4a4a;
+      --cor-fundo: #ffffff;
+      --cor-fundo-suave: #f7f5f0;
+      --cor-destaque: #2c5f5d;
+      --cor-borda: #e5e0d8;
+      --max-largura: 760px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--cor-texto);
+      background: var(--cor-fundo);
+    }
+    .topo {
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 1.2rem 1.5rem;
+    }
+    .topo-conteudo {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topo a.marca {
+      font-weight: 600;
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+    .topo a.marca span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--cor-texto-suave);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .topo nav a {
+      color: var(--cor-texto-suave);
+      text-decoration: none;
+      margin-left: 1.8rem;
+      font-size: 0.95rem;
+    }
+    .topo nav a:hover { color: var(--cor-destaque); }
+    .cabecalho-pagina {
+      max-width: var(--max-largura);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .cabecalho-pagina h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .cabecalho-pagina p {
+      font-size: 1.1rem;
+      color: var(--cor-texto-suave);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .lista-artigos {
+      max-width: var(--max-largura);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .artigo-card {
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .artigo-card:last-child { border-bottom: none; }
+    .artigo-card .meta {
+      font-size: 0.8rem;
+      color: var(--cor-texto-suave);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    .artigo-card h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      line-height: 1.3;
+    }
+    .artigo-card h2 a {
+      color: var(--cor-texto);
+      text-decoration: none;
+    }
+    .artigo-card h2 a:hover { color: var(--cor-destaque); }
+    .artigo-card p {
+      color: var(--cor-texto-suave);
+      font-size: 1rem;
+    }
+    .estado-vazio {
+      max-width: var(--max-largura);
+      margin: 3rem auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: var(--cor-fundo-suave);
+      border-radius: 12px;
+    }
+    .estado-vazio p {
+      color: var(--cor-texto-suave);
+      font-style: italic;
+    }
+    .rodape {
+      border-top: 1px solid var(--cor-borda);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--cor-texto-suave);
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) {
+      .cabecalho-pagina { padding: 2.5rem 1.2rem 1.5rem; }
+      .cabecalho-pagina h1 { font-size: 1.8rem; }
+      .topo nav a { margin-left: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a href="/" class="marca">
+        Sofia Teixeira Gomes
+        <span>Médica em saúde mental</span>
+      </a>
+      <nav>
+        <a href="/">Início</a>
+        <a href="/artigos/">Artigos</a>
+        <a href="/#agendar">Agendar</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="cabecalho-pagina">
+    <h1>Artigos</h1>
+    <p>Reflexões sobre saúde mental, psiquiatria, fé e cuidado integral. Conteúdo autoral.</p>
+  </section>
+
+  <main class="lista-artigos">
+
+    <!-- ============================================================
+         INSTRUÇÃO: a cada artigo novo, adicione um bloco como este
+         no TOPO da lista (artigos mais recentes primeiro):
+
+         <article class="artigo-card">
+           <div class="meta">
+             <time datetime="2026-06-08">8 de junho de 2026</time> · Categoria
+           </div>
+           <h2><a href="/artigos/slug-do-artigo/">Título do artigo</a></h2>
+           <p>Resumo de 1 ou 2 frases do artigo.</p>
+         </article>
+         ============================================================ -->
+
+    <div class="estado-vazio">
+      <p>Os primeiros artigos serão publicados em breve.</p>
+    </div>
+
+  </main>
+
+  <footer class="rodape">
+    Dra. Sofia Teixeira Gomes · Médica em saúde mental · CRM-MS 14359 · Residente em Psiquiatria
+  </footer>
+
+</body>
+</html>
