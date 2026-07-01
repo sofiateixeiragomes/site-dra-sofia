@@ -1,11 +1,11 @@
 // ==========================================
-// Autoavaliação de Saúde Mental — SPA
+// Check-up Mental — SPA
 // ==========================================
 
 (function() {
   const DATA = window.QUIZ_DATA;
   const app = document.getElementById('quiz-app');
-  const STORAGE_KEY = 'autoavaliacao-state';
+  const STORAGE_KEY = 'checkup-mental-state';
 
   const state = {
     view: 'landing',        // landing | consent | section-intro | question | results | leadForm
@@ -67,7 +67,7 @@
       goTo('section-intro');
     } else {
       goTo('results');
-      trackEvent('autoavaliacao_completada');
+      trackEvent('checkup_mental_completado');
     }
   }
 
@@ -192,12 +192,12 @@
     const container = el('section', { class: 'quiz-view landing-view' }, [
       el('div', { class: 'container quiz-narrow' }, [
         el('div', { class: 'quiz-hero' }, [
-          el('span', { class: 'quiz-badge' }, ['Material gratuito · sem cadastro pra começar']),
+          el('span', { class: 'quiz-badge' }, ['Check-up Mental · Gratuito']),
           el('h1', {}, ['Como está a sua saúde mental?']),
           el('p', { class: 'quiz-lead' }, [
-            'Uma autoavaliação em ',
+            'Um check-up em ',
             el('strong', {}, ['8 minutos']),
-            ', baseada em escalas usadas por psiquiatras no mundo todo (WHO-5, PHQ, GAD, ASRS).'
+            ', baseado em escalas usadas por psiquiatras no mundo todo (WHO-5, PHQ, GAD, ASRS).'
           ]),
           el('p', { class: 'quiz-lead-secondary' }, [
             'Ao final, você vai receber seu ',
@@ -218,15 +218,15 @@
         el('div', { class: 'quiz-cta-group' }, [
           el('button', {
             class: 'btn btn-primary btn-quiz-primary',
-            onclick: () => { state.startedAt = new Date().toISOString(); trackEvent('autoavaliacao_iniciada'); goTo('consent'); }
-          }, ['Começar autoavaliação →']),
+            onclick: () => { state.startedAt = new Date().toISOString(); trackEvent('checkup_mental_iniciado'); goTo('consent'); }
+          }, ['Começar Check-up Mental →']),
           el('p', { class: 'quiz-disclaimer' }, [
             '⚠️ Este material tem fim educativo e não substitui avaliação médica. Não é diagnóstico.'
           ])
         ]),
         Object.keys(state.answers).length > 0
           ? el('div', { class: 'quiz-resume-notice' }, [
-              el('p', {}, ['Você tem uma autoavaliação em andamento.']),
+              el('p', {}, ['Você tem um Check-up Mental em andamento.']),
               el('div', { class: 'resume-actions' }, [
                 el('button', { class: 'btn-link', onclick: () => goTo('question') }, ['Continuar de onde parei']),
                 el('button', { class: 'btn-link btn-link-danger', onclick: () => { clearState(); render(); } }, ['Recomeçar'])
@@ -367,7 +367,7 @@
     const level = getLevel(scores.total);
     const crisis = detectCrisisFlags();
 
-    trackEvent('autoavaliacao_resultado', { score: scores.total, nivel: level.label });
+    trackEvent('checkup_mental_resultado', { score: scores.total, nivel: level.label });
 
     const container = el('section', { class: 'quiz-view results-view' }, [
       el('div', { class: 'container quiz-narrow' }, [
@@ -438,7 +438,7 @@
               el('p', {}, ['Enviamos o resultado detalhado, com interpretação clínica e sugestões, para o seu e-mail. Grátis.']),
               el('button', {
                 class: 'btn btn-primary',
-                onclick: () => { trackEvent('autoavaliacao_email_click'); goTo('lead-form'); }
+                onclick: () => { trackEvent('checkup_mental_email_click'); goTo('lead-form'); }
               }, ['Quero receber por e-mail'])
             ]),
             el('div', { class: 'next-step-card' }, [
@@ -447,16 +447,16 @@
               el('p', {}, ['Uma avaliação médica olha para o conjunto: seu contexto, história e biologia. Atendimento online, particular.']),
               el('a', {
                 class: 'btn btn-secondary',
-                href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20a%20autoavalia%C3%A7%C3%A3o%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta.',
+                href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta.',
                 target: '_blank',
-                onclick: () => trackEvent('click_whatsapp', { origem_clique: 'autoavaliacao_resultado' })
+                onclick: () => trackEvent('click_whatsapp', { origem_clique: 'checkup_mental_resultado' })
               }, ['Agendar pelo WhatsApp'])
             ])
           ])
         ]),
 
         el('div', { class: 'results-footer' }, [
-          el('button', { class: 'btn-link', onclick: () => { clearState(); render(); } }, ['↻ Refazer autoavaliação']),
+          el('button', { class: 'btn-link', onclick: () => { clearState(); render(); } }, ['↻ Refazer Check-up Mental']),
           el('a', { class: 'btn-link', href: '../index.html' }, ['← Voltar ao site'])
         ])
       ])
@@ -500,7 +500,7 @@
               mode: 'no-cors'
             }).catch(() => {});
 
-            trackEvent('autoavaliacao_lead_enviado', {
+            trackEvent('checkup_mental_lead_enviado', {
               score: scores.total,
               nivel: level.label
             });
@@ -551,7 +551,7 @@
         el('div', { class: 'quiz-cta-group' }, [
           el('a', {
             class: 'btn btn-primary',
-            href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20a%20autoavalia%C3%A7%C3%A3o%20e%20gostaria%20de%20agendar%20uma%20consulta.',
+            href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20e%20gostaria%20de%20agendar%20uma%20consulta.',
             target: '_blank'
           }, ['💬 Agendar consulta pelo WhatsApp']),
           el('a', { class: 'btn-link', href: '../index.html' }, ['← Voltar ao site'])
