@@ -1308,6 +1308,8 @@ section {
   .hamburger { display: flex; z-index: 1001; }
 
   .hero { min-height: auto; padding-top: 7rem; padding-bottom: 3rem; }
+  .hero-text + .hero-text { display: none; }
+  .hero-text { margin-bottom: 1.4rem; }
   .specialties-grid { grid-template-columns: 1fr; }
   .specialty-hero { padding-top: 6rem; padding-bottom: 2.5rem; }
   .specialty-hero h1 { font-size: 1.8rem; }

@@ -204,6 +204,23 @@
             el('strong', {}, ['Índice de Bem-Estar Mental']),
             ' com detalhamento por área e um caminho de leitura para cada uma.'
           ]),
+          el('div', { class: 'quiz-author' }, [
+            el('img', { src: '../img/sofia-principal.jpg', alt: 'Dra. Sofia Teixeira Gomes' }),
+            el('div', { class: 'quiz-author-info' }, [
+              el('strong', {}, ['Criado pela Dra. Sofia Teixeira Gomes']),
+              el('span', {}, ['Médica em Saúde Mental · CRM-MS 14359'])
+            ])
+          ]),
+        ]),
+        el('div', { class: 'quiz-cta-group quiz-cta-top' }, [
+          el('button', {
+            class: 'btn btn-primary btn-quiz-primary',
+            onclick: () => { state.startedAt = new Date().toISOString(); trackEvent('checkup_mental_iniciado'); goTo('consent'); }
+          }, ['Começar Check-up Mental →']),
+          el('p', { class: 'quiz-meta' }, ['⏱ 8 minutos · 25 perguntas · sem cadastro para ver o resultado']),
+          el('p', { class: 'quiz-disclaimer' }, [
+            '⚠️ Este material tem fim educativo e não substitui avaliação médica. Não é diagnóstico.'
+          ])
         ]),
         el('div', { class: 'quiz-sections-preview' },
           DATA.sections.map((s, i) => el('div', { class: 'quiz-section-card' }, [
@@ -215,14 +232,9 @@
             ])
           ]))
         ),
-        el('div', { class: 'quiz-cta-group' }, [
-          el('button', {
-            class: 'btn btn-primary btn-quiz-primary',
-            onclick: () => { state.startedAt = new Date().toISOString(); trackEvent('checkup_mental_iniciado'); goTo('consent'); }
-          }, ['Começar Check-up Mental →']),
-          el('p', { class: 'quiz-disclaimer' }, [
-            '⚠️ Este material tem fim educativo e não substitui avaliação médica. Não é diagnóstico.'
-          ])
+        el('div', { class: 'quiz-quote' }, [
+          el('p', {}, ['“Desde a primeira consulta, me senti acolhido e compreendido. Ela escuta com empatia, explica tudo com clareza.”']),
+          el('span', {}, ['— Felipe de Jesus, avaliação no Google'])
         ]),
         Object.keys(state.answers).length > 0
           ? el('div', { class: 'quiz-resume-notice' }, [
@@ -242,9 +254,9 @@
   function renderConsent() {
     const container = el('section', { class: 'quiz-view consent-view' }, [
       el('div', { class: 'container quiz-narrow' }, [
-        el('span', { class: 'quiz-badge' }, ['Antes de começar']),
-        el('h1', {}, ['Preciso do seu consentimento para o uso dos seus dados.']),
-        el('p', { class: 'quiz-lead' }, ['Leia com atenção. É rápido:']),
+        el('span', { class: 'quiz-badge' }, ['Transparência']),
+        el('h1', {}, ['Antes de começar, 5 combinados rápidos.']),
+        el('p', { class: 'quiz-lead' }, ['Para você saber exatamente como isso funciona:']),
         el('ol', { class: 'consent-list' }, [
           el('li', {}, [
             el('strong', {}, ['Seus dados são anônimos por padrão.']),

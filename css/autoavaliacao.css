@@ -202,6 +202,70 @@
   font-style: italic;
 }
 
+.quiz-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.quiz-author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--sage-light);
+}
+
+.quiz-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.quiz-author-info strong {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.quiz-author-info span {
+  font-size: 0.82rem;
+  color: var(--text-medium);
+}
+
+.quiz-cta-top {
+  margin: 1.8rem 0 2.2rem;
+}
+
+.quiz-meta {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  color: var(--text-medium);
+}
+
+.quiz-quote {
+  background: var(--cream-dark);
+  border-left: 3px solid var(--sage-light);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.quiz-quote p {
+  font-style: italic;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+}
+
+.quiz-quote span {
+  font-size: 0.82rem;
+  color: var(--text-medium);
+  font-weight: 600;
+}
+
 .quiz-resume-notice {
   background: var(--cream-dark);
   border-radius: var(--radius);
@@ -758,4 +822,68 @@
   .area-score { font-size: 1.5rem; }
   .quiz-header .container { padding: 0 1rem; }
   .quiz-brand .brand-name { font-size: 0.95rem; }
+}
+
+/* ---------- Conteudo indexavel (SEO) abaixo do quiz ---------- */
+
+.quiz-seo {
+  background: var(--white);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 3.5rem 0 4rem;
+}
+
+.quiz-seo h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 2.2rem 0 0.8rem;
+}
+
+.quiz-seo h2:first-child {
+  margin-top: 0;
+}
+
+.quiz-seo h3 {
+  font-size: 1.1rem;
+  color: var(--sage-dark);
+  margin: 1.5rem 0 0.4rem;
+}
+
+.quiz-seo p,
+.quiz-seo ul li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+}
+
+.quiz-seo p {
+  margin-bottom: 1rem;
+}
+
+.quiz-seo ul {
+  margin: 0.5rem 0 1.5rem 1.2rem;
+}
+
+.quiz-seo ul li {
+  margin-bottom: 0.6rem;
+}
+
+.quiz-seo a {
+  color: var(--sage);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.quiz-seo a:hover {
+  color: var(--sage-dark);
+}
+
+.quiz-seo-links {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (max-width: 600px) {
+  .quiz-seo { padding: 2.5rem 0 3rem; }
+  .quiz-seo h2 { font-size: 1.3rem; }
 }
