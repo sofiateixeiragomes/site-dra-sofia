@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sofiateixeiragomes.com.br/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <loc>https://www.sofiateixeiragomes.com.br/</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sofiateixeiragomes.com.br/check-up-mental/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <loc>https://www.sofiateixeiragomes.com.br/check-up-mental/</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sofiateixeiragomes.com.br/artigos/</loc>
+    <loc>https://www.sofiateixeiragomes.com.br/artigos/</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sofiateixeiragomes.com.br/artigos/aridez-espiritual-ou-depressao/</loc>
+    <loc>https://www.sofiateixeiragomes.com.br/artigos/aridez-espiritual-ou-depressao/</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sofiateixeiragomes.com.br/artigos/psiquiatra-ou-psicologo/</loc>
+    <loc>https://www.sofiateixeiragomes.com.br/artigos/psiquiatra-ou-psicologo/</loc>
     <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/depressao.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/ansiedade.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/tdah-adulto.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/transtorno-bipolar.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/dependencia-quimica.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sofiateixeiragomes.com.br/especialidades/esquizofrenia-psicose.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

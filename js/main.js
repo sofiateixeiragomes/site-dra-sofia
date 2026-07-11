@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
   if (hamburger && mobileNav) {
+    hamburger.setAttribute('aria-expanded', 'false');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      const open = mobileNav.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
 
     mobileNav.querySelectorAll('a').forEach(link => {
@@ -32,15 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- FAQ Accordion ---
   document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.setAttribute('aria-expanded', 'false');
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const wasActive = item.classList.contains('active');
 
       // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        const q = i.querySelector('.faq-question');
+        if (q) q.setAttribute('aria-expanded', 'false');
+      });
 
       // Toggle current
-      if (!wasActive) item.classList.add('active');
+      if (!wasActive) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
@@ -110,15 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 600);
     });
   }
-
-  // --- Smooth scroll for anchor links ---
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
 });
