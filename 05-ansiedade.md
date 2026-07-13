@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Pessoa em espaço aberto e natural — campo, praia, floresta — com expressão de alívio e presença. Transmite expansão e liberdade. Evite imagens de pessoa tensa ou em crise.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -84,7 +84,7 @@ Pacientes em uso crônico de alprazolam, clonazepam ou diazepam precisam de um p
 
 Práticas regulares de respiração e ativação do parassimpático (respiração diafragmática, meditação, yoga) têm substrato neurobiológico comprovado — modulam o eixo HPA e reduzem a reatividade amigdalar. Exercício aeróbico regular é ansiolítico. Sono de qualidade é regulador. Vínculos afetivos seguros reduzem o estado crônico de alerta. Conexão espiritual e senso de propósito estabilizam o sistema nervoso de formas que nenhum medicamento alcança sozinho.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -114,8 +114,8 @@ Não — embora a sensação durante o episódio seja frequentemente de morte im
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(67) 98119-8225](https://wa.me/5567981198225)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 9117-3462](https://wa.me/558591173462)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/558591173462]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*

@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Imagem poética de dualidade — lua e sol no mesmo céu, água calma e ondas. Transmite a complexidade do humor sem reforçar estigma.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -28,7 +28,7 @@ O Transtorno Bipolar afeta aproximadamente 2 a 3% da população mundial — e, 
 
 O diagnóstico certo muda tudo. O tratamento certo muda a vida.
 
-**`[BOTÃO: 💬 Quero entender o meu caso → https://wa.me/5567981198225]`**
+**`[BOTÃO: 💬 Quero entender o meu caso → https://wa.me/558591173462]`**
 
 ---
 
@@ -86,7 +86,7 @@ Quando o tratamento convencional não é suficiente, existem caminhos:
 - **Eletroconvulsoterapia (ECT):** um dos tratamentos mais eficazes da psiquiatria para episódios graves — seguro, indolor e muito diferente do que o senso comum imagina.
 - **Cetamina:** ação antidepressiva em horas para episódios depressivos refratários, atuando em mecanismos completamente distintos dos antidepressivos convencionais.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -116,8 +116,8 @@ Sim — e é o padrão ouro. A medicina cuida da biologia; a psicoterapia trabal
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(67) 98119-8225](https://wa.me/5567981198225)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 9117-3462](https://wa.me/558591173462)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/558591173462]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*

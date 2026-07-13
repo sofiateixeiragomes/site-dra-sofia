@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Pessoa saindo de um espaço de sombra em direção à luz natural — metáfora de emergência, não de fraqueza. Tons de azul profundo transitando para dourado. Evite imagens que reforcem a dor sem perspectiva de saída.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -82,7 +82,7 @@ Cerca de 30% dos pacientes não respondem adequadamente a dois ou mais antidepre
 - **Cetamina:** o antidepressivo de ação mais rápida que conhecemos. Age em horas — restaurando sinapses e promovendo neuroplasticidade de forma que nenhum antidepressivo convencional consegue. Especialmente indicada para risco de suicídio ativo.
 - **Eletroconvulsoterapia (ECT):** o tratamento mais eficaz para depressão grave com risco de vida. Segura, indolor (sob anestesia), e transformadora para quem realmente precisa.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -112,8 +112,8 @@ Muito. A neurociência mostra que exercício aeróbico regular aumenta BDNF (o "
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(67) 98119-8225](https://wa.me/5567981198225)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 9117-3462](https://wa.me/558591173462)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/558591173462]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*

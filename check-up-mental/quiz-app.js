@@ -459,7 +459,7 @@
               el('p', {}, ['Uma avaliação médica olha para o conjunto: seu contexto, história e biologia. Atendimento online, particular.']),
               el('a', {
                 class: 'btn btn-secondary',
-                href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta.',
+                href: 'https://wa.me/558591173462?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta.',
                 target: '_blank',
                 onclick: () => trackEvent('click_whatsapp', { origem_clique: 'checkup_mental_resultado' })
               }, ['Agendar pelo WhatsApp'])
@@ -563,7 +563,7 @@
         el('div', { class: 'quiz-cta-group' }, [
           el('a', {
             class: 'btn btn-primary',
-            href: 'https://wa.me/5567981198225?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20e%20gostaria%20de%20agendar%20uma%20consulta.',
+            href: 'https://wa.me/558591173462?text=Ol%C3%A1!%20Acabei%20de%20fazer%20o%20Check-up%20Mental%20e%20gostaria%20de%20agendar%20uma%20consulta.',
             target: '_blank'
           }, ['💬 Agendar consulta pelo WhatsApp']),
           el('a', { class: 'btn-link', href: '../index.html' }, ['← Voltar ao site'])

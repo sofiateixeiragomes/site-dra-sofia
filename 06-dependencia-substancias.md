@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Caminho em floresta ou paisagem aberta — simbolizando escolha e recomeço. Tons cálidos de esperança e vida. Sem imagens que reforcem estigma.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -95,7 +95,7 @@ A recuperação sustentável passa por reconstruir o que a dependência foi cobr
 
 Depressão, TEPT, TDAH e ansiedade precisam ser tratados em paralelo — não sequencialmente. Trabalho junto com psicólogos, grupos de apoio (AA, NA, SMART Recovery) e, quando necessário, com equipes de reabilitação psicossocial.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/558591173462]`**
 
 ---
 
@@ -125,8 +125,8 @@ Não é possível forçar a recuperação de ninguém. Mas é possível aprender
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(67) 98119-8225](https://wa.me/5567981198225)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 9117-3462](https://wa.me/558591173462)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5567981198225]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/558591173462]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*
