@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Adulto em ambiente cotidiano — mesa com várias coisas abertas, expressão pensativa mas não angustiada. Transmite o desafio real do TDAH sem patologizar a existência.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/558591173462]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5585991173462]`**
 
 ---
 
@@ -71,7 +71,7 @@ Estudos mostram que exercício aeróbico regular tem impacto direto e mensuráve
 
 TDAH raramente vem sozinho. Depressão, ansiedade, insônia, transtorno de uso de substâncias — cada elemento é avaliado e tratado na sequência adequada, sem apressar o processo.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/558591173462]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5585991173462]`**
 
 ---
 
@@ -101,8 +101,8 @@ Todos nós nos distraímos. A diferença está na intensidade, na pervasividade 
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 9117-3462](https://wa.me/558591173462)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 99117-3462](https://wa.me/5585991173462)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/558591173462]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5585991173462]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*
