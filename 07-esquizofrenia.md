@@ -12,7 +12,7 @@
 
 **`[IMAGEM: Pessoa em ambiente familiar e acolhedor — em casa, à janela, com expressão de serenidade e presença. Transmite que uma vida com sentido é possível. Evite imagens que reforcem isolamento ou estigma.]`**
 
-**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5585991173462]`**
+**`[BOTÃO CTA TOPO: 💬 Agendar Avaliação → https://wa.me/5567981198225]`**
 
 ---
 
@@ -92,7 +92,7 @@ A escolha do antipsicótico considera o perfil de sintomas, os efeitos colaterai
 
 O tratamento farmacológico estabiliza o episódio. A reabilitação psicossocial — treino de habilidades, suporte ocupacional, gradual retomada de autonomia — é o que permite que a estabilidade se transforme em qualidade de vida real. A família também precisa de orientação, cuidado e espaço para processar o que está vivendo. Faço questão de incluir os que amam o paciente nesse processo.
 
-**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5585991173462]`**
+**`[BOTÃO: 💬 Agendar minha avaliação → https://wa.me/5567981198225]`**
 
 ---
 
@@ -122,8 +122,8 @@ Estar presente sem superproteger. Incentivar o tratamento sem coagir. Aprender s
 
 Atendimento online para todo o Brasil.
 CRM-MS 14359 | Residente em Psiquiatria
-Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(85) 99117-3462](https://wa.me/5585991173462)
+Instagram: [@sofiatgomes](https://www.instagram.com/sofiatgomes/) | WhatsApp: [(67) 98119-8225](https://wa.me/5567981198225)
 
-**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5585991173462]`**
+**`[BOTÃO CTA FINAL: 💬 Agendar minha Avaliação → https://wa.me/5567981198225]`**
 
 *Sem lista de espera. O primeiro passo começa no WhatsApp.*
