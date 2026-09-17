@@ -55,35 +55,79 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Tracking de cliques no WhatsApp (conversão Google Ads) ---
-  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.addEventListener('click', () => {
-      // Identifica origem do clique pra segmentar relatórios
-      let origem = 'outro';
-      if (link.classList.contains('whatsapp-float')) origem = 'botao_flutuante';
-      else if (link.classList.contains('nav-cta')) origem = 'navbar';
-      else if (link.classList.contains('btn-primary')) origem = 'cta_principal';
-      else if (link.closest('.cta-section')) origem = 'cta_final';
-      else if (link.closest('.thanks-next-step')) origem = 'pagina_obrigado';
-      else if (link.closest('.specialty-hero')) origem = 'hero_especialidade';
-      else if (link.closest('.hero')) origem = 'hero_home';
-
-      // Evento gtag (Google Ads + GA via GTM podem ouvir)
-      if (typeof gtag === 'function') {
-        gtag('event', 'click_whatsapp', {
-          'origem_clique': origem,
-          'page_path': window.location.pathname
-        });
-      }
-
-      // Push para dataLayer (pra usar como trigger no GTM se quiser)
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'click_whatsapp',
-        origem_clique: origem,
-        page_path: window.location.pathname
+  // --- Atribuição: persiste UTMs e anexa origem curta à mensagem do WhatsApp ---
+  // Ex.: ?utm_source=meta&utm_campaign=ansiedade  ->  "... (ref: meta-ansiedade)"
+  // A secretária vê de onde veio a conversa sem precisar de ferramenta extra.
+  const UTM_KEY = 'stg_utm';
+  const readUtm = () => {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const found = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => {
+        const v = q.get(k);
+        if (v) found[k] = v.slice(0, 40);
       });
+      if (Object.keys(found).length) {
+        sessionStorage.setItem(UTM_KEY, JSON.stringify(found));
+        return found;
+      }
+      const saved = sessionStorage.getItem(UTM_KEY);
+      return saved ? JSON.parse(saved) : null;
+    } catch (_) { return null; }
+  };
+  const utm = readUtm();
+  const utmRef = utm
+    ? [utm.utm_source, utm.utm_campaign || utm.utm_content].filter(Boolean).join('-').replace(/[^\w\-]/g, '')
+    : '';
+
+  if (utmRef) {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      try {
+        const url = new URL(link.href);
+        const text = url.searchParams.get('text') || '';
+        if (text && !/\(ref:/.test(text)) {
+          url.searchParams.set('text', text + ' (ref: ' + utmRef + ')');
+          link.href = url.toString();
+        }
+      } catch (_) {}
     });
+  }
+
+  // --- Tracking de cliques no WhatsApp (único listener; alimenta GA4/GTM e a conversão do Google Ads) ---
+  const ADS_CONVERSION = 'AW-11124369234/gxQ4COLSmaYcENLOwbgp';
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="wa.me"]');
+    if (!link) return;
+
+    // Identifica origem do clique pra segmentar relatórios
+    let origem = 'outro';
+    if (link.classList.contains('whatsapp-float')) origem = 'botao_flutuante';
+    else if (link.classList.contains('nav-cta')) origem = 'navbar';
+    else if (link.closest('.mobile-nav')) origem = 'menu_mobile';
+    else if (link.closest('.hero') && !link.closest('.specialty-hero')) origem = 'hero_home';
+    else if (link.closest('.specialty-hero')) origem = 'hero_especialidade';
+    else if (link.closest('.cta-section')) origem = 'cta_final';
+    else if (link.closest('.thanks-next-step')) origem = 'pagina_obrigado';
+    else if (link.closest('.footer')) origem = 'rodape';
+    else if (link.classList.contains('btn-primary')) origem = 'cta_secao';
+
+    const payload = {
+      origem_clique: origem,
+      page_path: window.location.pathname,
+      utm_ref: utmRef || '(direto)'
+    };
+
+    // Push para dataLayer (trigger no GTM -> GA4)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: 'click_whatsapp' }, payload));
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_whatsapp', payload);
+      // Conversão do Google Ads: só para CTAs de agendamento (o telefone do rodapé não conta como lead)
+      if (origem !== 'rodape') {
+        gtag('event', 'conversion', { 'send_to': ADS_CONVERSION, 'origem_clique': origem });
+      }
+    }
   });
 
   // --- E-book form (Brevo) ---
