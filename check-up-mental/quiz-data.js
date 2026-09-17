@@ -12,7 +12,7 @@ window.QUIZ_DATA = {
       subtitle: 'Como você tem se sentido nas últimas 2 semanas',
       description: 'Esta parte olha para o seu humor, energia e satisfação com a vida no período recente. Usa escalas validadas mundialmente (WHO-5, PHQ-2, GAD-2).',
       illustration: '🌤️',
-      color: '#7A8B6F',
+      color: '#00544B', // verde calma
       maxRaw: 40,
       questions: [
         // WHO-5 (bem-estar) — 5-point (0=nunca, 5=sempre)
@@ -37,7 +37,7 @@ window.QUIZ_DATA = {
       subtitle: 'Sua atenção, organização e autorregulação',
       description: 'Esta parte olha para funções executivas: foco, memória de trabalho, gestão de tempo e regulação emocional. Baseado no ASRS-6, escala da OMS para rastreio de TDAH em adultos.',
       illustration: '🧠',
-      color: '#A3B18A',
+      color: '#043254', // azul serenidade
       maxRaw: 32,
       questions: [
         // ASRS-6 (rastreio TDAH) — 5-point (0=nunca, 4=muito frequentemente) — invertidas
@@ -58,7 +58,7 @@ window.QUIZ_DATA = {
       subtitle: 'A base biológica e social que sustenta seu cérebro',
       description: 'Sono, movimento, vínculos, alimentação e nível de estresse afetam diretamente sua saúde mental. Não são "dicas de bem-estar", são pilares.',
       illustration: '🌱',
-      color: '#C4A35A',
+      color: '#54084D', // roxo carinho
       maxRaw: 28,
       questions: [
         { id: 'l1', text: 'Durmo em média entre 7 e 9 horas por noite', scale: 'freq5', invert: false, weight: 1, source: 'Sono' },
@@ -125,28 +125,28 @@ window.QUIZ_DATA = {
     {
       min: 0, max: 25,
       label: 'Precisa de Atenção',
-      color: '#c85050',
+      color: '#F05A3D', // laranja mudança
       description: 'Vários sinais indicam que sua saúde mental está sob pressão significativa neste momento. Isso não define quem você é, mas sinaliza que buscar avaliação médica especializada faz muito sentido.',
       recommend: 'consulta'
     },
     {
       min: 26, max: 50,
       label: 'Se Cuidando',
-      color: '#d4a04a',
+      color: '#A0429C', // roxo respiração
       description: 'Há sinais importantes de sobrecarga em algumas áreas. Este é um bom momento para olhar com mais atenção para o que está acontecendo e considerar uma avaliação.',
       recommend: 'consulta'
     },
     {
       min: 51, max: 75,
       label: 'Em Equilíbrio',
-      color: '#7A8B6F',
+      color: '#10A192', // verde meditação
       description: 'Você está indo bem no geral, com algumas áreas que podem se beneficiar de atenção. Ajustes pequenos podem trazer diferenças grandes.',
       recommend: 'ajustes'
     },
     {
       min: 76, max: 100,
       label: 'Florescendo',
-      color: '#5C6B4F',
+      color: '#00544B', // verde calma
       description: 'Excelente! Você mantém uma base sólida de bem-estar mental em várias dimensões. Continue investindo no que já está funcionando.',
       recommend: 'manutencao'
     }
@@ -154,10 +154,10 @@ window.QUIZ_DATA = {
 
   // Interpretações por área (0-100 dentro da seção)
   areaLevels: [
-    { min: 0, max: 40, label: 'Precisa de atenção', color: '#c85050' },
-    { min: 41, max: 60, label: 'Merece cuidado', color: '#d4a04a' },
-    { min: 61, max: 80, label: 'Base razoável', color: '#7A8B6F' },
-    { min: 81, max: 100, label: 'Excelente', color: '#5C6B4F' }
+    { min: 0, max: 40, label: 'Precisa de atenção', color: '#F05A3D' },
+    { min: 41, max: 60, label: 'Merece cuidado', color: '#A0429C' },
+    { min: 61, max: 80, label: 'Base razoável', color: '#10A192' },
+    { min: 81, max: 100, label: 'Excelente', color: '#00544B' }
   ],
 
   // Sugestões de leitura conforme área
