@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00544B">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/img/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <title>Artigos | Dra. Sofia Teixeira Gomes — Médica em saúde mental</title>
   <meta name="description" content="Reflexões sobre saúde mental, psiquiatria, fé e cuidado integral. Conteúdo autoral da Dra. Sofia Teixeira Gomes, médica em saúde mental." />
@@ -42,18 +47,25 @@
 
   <style>
     :root {
-      --cor-texto: #1a1a1a;
-      --cor-texto-suave: #4a4a4a;
-      --cor-fundo: #ffffff;
-      --cor-fundo-suave: #f7f5f0;
-      --cor-destaque: #2c5f5d;
-      --cor-borda: #e5e0d8;
+      /* Paleta do Manual da Marca Sofia Gomes 2023 v3 */
+      --verde-calma: #00544B;
+      --roxo-carinho: #54084D;
+      --azul-serenidade: #043254;
+      --laranja-mudanca: #F05A3D;
+      --cor-texto: #02121C;
+      --cor-texto-suave: #44535C;
+      --cor-fundo: #F2F2F2;
+      --cor-fundo-suave: #E3EFEC;
+      --cor-destaque: var(--verde-calma);
+      --cor-borda: #D2DBD9;
       --max-largura: 760px;
+      --font-display: 'Unbounded', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      font-size: 18px;
+      font-family: var(--font-body);
+      font-size: 17px;
       line-height: 1.7;
       color: var(--cor-texto);
       background: var(--cor-fundo);
@@ -70,19 +82,14 @@
       align-items: center;
     }
     .topo a.marca {
-      font-weight: 600;
-      color: var(--cor-texto);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      font-size: 1.05rem;
     }
-    .topo a.marca span {
+    .topo a.marca img {
+      height: 30px;
+      width: auto;
       display: block;
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      color: var(--cor-texto-suave);
-      text-transform: uppercase;
-      margin-top: 2px;
     }
     .topo nav a {
       color: var(--cor-texto-suave);
@@ -98,8 +105,11 @@
       text-align: center;
     }
     .cabecalho-pagina h1 {
-      font-size: 2.3rem;
+      font-family: var(--font-display);
+      font-size: 2rem;
       font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
       margin-bottom: 1rem;
     }
     .cabecalho-pagina p {
@@ -119,17 +129,20 @@
     }
     .artigo-card:last-child { border-bottom: none; }
     .artigo-card .meta {
-      font-size: 0.8rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
       color: var(--cor-texto-suave);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 0.6rem;
     }
     .artigo-card h2 {
-      font-size: 1.4rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
       margin-bottom: 0.7rem;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .artigo-card h2 a {
       color: var(--cor-texto);
@@ -162,7 +175,7 @@
     }
     @media (max-width: 640px) {
       .cabecalho-pagina { padding: 2.5rem 1.2rem 1.5rem; }
-      .cabecalho-pagina h1 { font-size: 1.8rem; }
+      .cabecalho-pagina h1 { font-size: 1.5rem; }
       .topo nav a { margin-left: 1rem; font-size: 0.9rem; }
     }
   </style>
@@ -172,8 +185,7 @@
   <header class="topo">
     <div class="topo-conteudo">
       <a href="/" class="marca">
-        Sofia Teixeira Gomes
-        <span>Médica em saúde mental</span>
+        <img src="/img/logo-horizontal-verde.svg" alt="Sofia Gomes — Médica" width="1280" height="190">
       </a>
       <nav>
         <a href="/">Início</a>

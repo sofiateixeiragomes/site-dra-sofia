@@ -13,7 +13,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.95);
+  background: rgba(242,242,242,0.96);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
   padding: 0.9rem 0;
@@ -27,12 +27,17 @@
 
 .quiz-brand {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   text-decoration: none;
 }
 
+.quiz-logo {
+  height: 30px;
+  width: auto;
+}
+
 .quiz-brand .brand-name {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--sage-dark);
@@ -40,7 +45,7 @@
 }
 
 .quiz-brand .brand-role {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   color: var(--text-light);
   letter-spacing: 1px;
@@ -80,7 +85,7 @@
 
 .quiz-badge {
   display: inline-block;
-  background: rgba(122,139,111,0.12);
+  background: rgba(0,84,75,0.12);
   color: var(--sage-dark);
   padding: 0.4rem 1rem;
   border-radius: 50px;
@@ -92,7 +97,7 @@
 }
 
 .quiz-view h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 2.2rem;
   color: var(--text-dark);
   line-height: 1.2;
@@ -100,12 +105,12 @@
 }
 
 .quiz-view h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   color: var(--text-dark);
 }
 
 .quiz-view h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   color: var(--text-dark);
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -142,7 +147,7 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  border: 1px solid rgba(122,139,111,0.1);
+  border: 1px solid rgba(0,84,75,0.08);
 }
 
 .quiz-section-emoji {
@@ -290,7 +295,7 @@
   background: transparent;
   border: none;
   color: var(--sage-dark);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -427,7 +432,7 @@
   border: 2px solid var(--cream-dark);
   border-radius: var(--radius);
   padding: 1.1rem 1.4rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--text-dark);
   cursor: pointer;
@@ -446,7 +451,7 @@
 
 .question-option.selected {
   border-color: var(--sage);
-  background: rgba(122,139,111,0.08);
+  background: rgba(0,84,75,0.08);
 }
 
 .option-radio {
@@ -503,7 +508,7 @@
 }
 
 .crisis-content h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   color: #8a4b1a;
   margin: 0 0 0.4rem;
@@ -536,7 +541,7 @@
 }
 
 .score-value {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 5rem;
   font-weight: 700;
   line-height: 1;
@@ -566,7 +571,7 @@
 }
 
 .score-label {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 600;
   margin: 0.5rem 0;
@@ -620,7 +625,7 @@
 
 .area-title-block { flex: 1; }
 .area-title-block h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   margin: 0 0 0.2rem;
   color: var(--text-dark);
   font-size: 1.1rem;
@@ -633,7 +638,7 @@
 }
 
 .area-score {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
@@ -722,7 +727,7 @@
 }
 
 .next-step-card h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
@@ -766,7 +771,7 @@
   margin-bottom: 0.8rem;
   border: 1.5px solid var(--cream-dark);
   border-radius: 10px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.98rem;
   color: var(--text-dark);
   background: var(--cream);
