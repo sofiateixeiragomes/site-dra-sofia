@@ -205,7 +205,7 @@ remédio, medicamento, bula, genérico, posologia
 **Títulos (15):**
 ```
 1.  Psiquiatra Online | Agende
-2.  Dra. Sofia | Médica Psiquiatra
+2.  Dra. Sofia | Saúde Mental
 3.  Consulta Psiquiátrica Online
 4.  Atendimento Online — Brasil
 5.  Agende Pelo WhatsApp Hoje
@@ -283,14 +283,14 @@ remédio, medicamento, bula, genérico, posologia
 10. Recupere Seu Foco
 11. Baseado em Ciência
 12. Atendimento Online Brasil
-13. Material De Médica Psiquiatra
+13. Material Escrito Por Médica
 14. Comece Pelo E-book Grátis
 15. Dúvidas? Comece Aqui
 ```
 
 **Descrições (4):**
 ```
-1. E-book gratuito por médica psiquiatra. Entenda por que sua atenção está fugindo. Baixe agora.
+1. E-book gratuito por médica em saúde mental. Entenda por que sua atenção foge. Baixe agora.
 2. Material baseado em neurociência. Após ler, opção de agendar consulta online se quiser.
 3. Sem spam. Receba o e-book na hora e conteúdos sobre saúde mental. Por Dra. Sofia.
 4. CRM-MS 14359. Atendimento 100% online. Comece pelo e-book ou agende direto.
