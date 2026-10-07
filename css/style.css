@@ -1610,3 +1610,77 @@ section {
 @media (max-width: 400px) {
   .hero-trust { grid-template-columns: 1fr; }
 }
+
+/* --- Pré-triagem antes do WhatsApp --- */
+.triagem {
+  width: min(92vw, 460px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-lg);
+  overflow-y: auto;
+}
+.triagem::backdrop { background: rgba(2,18,28,0.55); }
+.triagem-caixa { position: relative; padding: 2rem 1.6rem 1.6rem; }
+.triagem-fechar {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--text-light);
+  cursor: pointer;
+}
+.triagem-progresso {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 0.5rem;
+}
+.triagem-pergunta { font-size: 1.15rem; line-height: 1.35; margin-bottom: 1.2rem; }
+.triagem-opcoes { display: grid; gap: 0.6rem; }
+.triagem-opcao {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-align: left;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.triagem-opcao:hover,
+.triagem-opcao:focus-visible { border-color: var(--brand); background: var(--verde-veu); outline: none; }
+.triagem-mensagem {
+  white-space: pre-line;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius);
+  background: var(--verde-veu);
+  font-size: 0.95rem;
+  color: var(--text-medium);
+}
+.triagem-enviar { width: 100%; justify-content: center; }
+.triagem-aviso { margin-top: 0.9rem; font-size: 0.82rem; color: var(--text-light); text-align: center; }
+.triagem-voltar {
+  margin-top: 1.2rem;
+  padding: 0.3rem 0;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  cursor: pointer;
+}

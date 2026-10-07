@@ -93,23 +93,175 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Identifica origem do clique pra segmentar relatórios
+  const origemDoLink = (link) => {
+    if (link.classList.contains('whatsapp-float')) return 'botao_flutuante';
+    if (link.classList.contains('nav-cta')) return 'navbar';
+    if (link.closest('.mobile-nav')) return 'menu_mobile';
+    if (link.closest('.hero') && !link.closest('.specialty-hero')) return 'hero_home';
+    if (link.closest('.specialty-hero')) return 'hero_especialidade';
+    if (link.closest('.cta-section')) return 'cta_final';
+    if (link.closest('.thanks-next-step')) return 'pagina_obrigado';
+    if (link.closest('.footer')) return 'rodape';
+    if (link.classList.contains('btn-primary')) return 'cta_secao';
+    return 'outro';
+  };
+
+  // --- Pré-triagem antes do WhatsApp ---
+  // Três toques montam a mensagem: quem só clicou por curiosidade tende a parar aqui,
+  // e a secretária recebe contexto para uma primeira resposta pessoal.
+  // As respostas vão apenas para o texto do WhatsApp. Nada é salvo nem enviado a
+  // analytics, porque o motivo da consulta é dado de saúde.
+  const TRIAGEM = [
+    {
+      id: 'quem',
+      pergunta: 'Para quem é a consulta?',
+      opcoes: [
+        { rotulo: 'Para mim', linha: 'A consulta é para mim.' },
+        { rotulo: 'Para um familiar', linha: 'A consulta é para um familiar.' }
+      ]
+    },
+    {
+      id: 'motivo',
+      pergunta: 'O que te traz agora?',
+      opcoes: [
+        { rotulo: 'Ansiedade', linha: 'Motivo: ansiedade.' },
+        { rotulo: 'Tristeza ou desânimo', linha: 'Motivo: tristeza ou desânimo.' },
+        { rotulo: 'Atenção e foco', linha: 'Motivo: atenção e foco.' },
+        { rotulo: 'Oscilações de humor', linha: 'Motivo: oscilações de humor.' },
+        { rotulo: 'Outro motivo', linha: 'Motivo: outro.' },
+        { rotulo: 'Prefiro contar na consulta', linha: '' }
+      ]
+    },
+    {
+      id: 'momento',
+      pergunta: 'Em que momento você está?',
+      opcoes: [
+        { rotulo: 'Quero agendar o quanto antes', linha: 'Quero agendar o quanto antes.' },
+        { rotulo: 'Quero entender o atendimento antes de decidir', linha: 'Antes de agendar, quero entender como funciona o atendimento.' }
+      ]
+    }
+  ];
+
+  const triagem = { dialog: null, corpo: null, passos: [], respostas: [], etapa: 0, base: '', ref: '', destino: '', origem: '' };
+
+  const criar = (tag, classe, texto) => {
+    const node = document.createElement(tag);
+    if (classe) node.className = classe;
+    if (texto) node.textContent = texto;
+    return node;
+  };
+
+  const mensagemTriagem = () =>
+    [triagem.base].concat(triagem.respostas.filter(Boolean)).join('\n') + triagem.ref;
+
+  const renderTriagem = () => {
+    const { corpo, passos, etapa } = triagem;
+    corpo.textContent = '';
+
+    if (etapa < passos.length) {
+      const passo = passos[etapa];
+      corpo.append(
+        criar('p', 'triagem-progresso', 'Pergunta ' + (etapa + 1) + ' de ' + passos.length),
+        criar('h2', 'triagem-pergunta', passo.pergunta)
+      );
+      const opcoes = criar('div', 'triagem-opcoes');
+      passo.opcoes.forEach(opcao => {
+        const botao = criar('button', 'triagem-opcao', opcao.rotulo);
+        botao.type = 'button';
+        botao.addEventListener('click', () => {
+          triagem.respostas[etapa] = opcao.linha;
+          triagem.etapa = etapa + 1;
+          renderTriagem();
+        });
+        opcoes.append(botao);
+      });
+      corpo.append(opcoes);
+    } else {
+      const mensagem = mensagemTriagem();
+      const enviar = criar('a', 'btn btn-primary triagem-enviar', '💬 Continuar no WhatsApp');
+      enviar.href = triagem.destino + '?text=' + encodeURIComponent(mensagem);
+      enviar.target = '_blank';
+      enviar.rel = 'noopener';
+      enviar.addEventListener('click', () => triagem.dialog.close());
+      corpo.append(
+        criar('p', 'triagem-progresso', 'Tudo pronto'),
+        criar('h2', 'triagem-pergunta', 'Sua mensagem para a equipe'),
+        criar('p', 'triagem-mensagem', mensagem),
+        enviar,
+        criar('p', 'triagem-aviso', 'Consulta online, por videochamada. Atendimento particular, sem convênios. A equipe responde no horário comercial com os horários disponíveis e o valor.')
+      );
+    }
+
+    if (etapa > 0) {
+      const voltar = criar('button', 'triagem-voltar', '← Voltar');
+      voltar.type = 'button';
+      voltar.addEventListener('click', () => {
+        triagem.etapa = etapa - 1;
+        renderTriagem();
+      });
+      corpo.append(voltar);
+    }
+
+    const foco = corpo.querySelector('.triagem-opcao, .triagem-enviar');
+    if (foco) foco.focus();
+  };
+
+  const abrirTriagem = (link) => {
+    if (!triagem.dialog) {
+      const dialog = criar('dialog', 'triagem');
+      dialog.setAttribute('aria-label', 'Antes de ir para o WhatsApp');
+      const caixa = criar('div', 'triagem-caixa');
+      const fechar = criar('button', 'triagem-fechar', '×');
+      fechar.type = 'button';
+      fechar.setAttribute('aria-label', 'Fechar');
+      fechar.addEventListener('click', () => dialog.close());
+      triagem.corpo = criar('div', 'triagem-corpo');
+      caixa.append(fechar, triagem.corpo);
+      dialog.append(caixa);
+      // Clique fora da caixa fecha
+      dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+      document.body.append(dialog);
+      triagem.dialog = dialog;
+    }
+
+    const url = new URL(link.href);
+    const texto = url.searchParams.get('text') || '';
+    const ref = texto.match(/\s*\(ref: [^)]*\)$/);
+    triagem.ref = ref ? ref[0] : '';
+    triagem.base = ref ? texto.slice(0, ref.index) : texto;
+    triagem.destino = url.origin + url.pathname;
+    triagem.origem = origemDoLink(link);
+    // Nas páginas de especialidade a mensagem já diz o motivo
+    triagem.passos = TRIAGEM.filter(p => !(p.id === 'motivo' && /página sobre/i.test(triagem.base)));
+    triagem.respostas = [];
+    triagem.etapa = 0;
+
+    renderTriagem();
+    triagem.dialog.showModal();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'triagem_whatsapp_inicio', origem_clique: triagem.origem, page_path: window.location.pathname });
+  };
+
+  // O rodapé continua com link direto, para quem só quer o número.
+  const passaPelaTriagem = (link) =>
+    typeof HTMLDialogElement === 'function' && !link.closest('.triagem') && !link.closest('.footer');
+
   // --- Tracking de cliques no WhatsApp (único listener; alimenta GA4/GTM e a conversão do Google Ads) ---
+  // Com a pré-triagem, o clique só é contado quando a pessoa conclui as perguntas.
   const ADS_CONVERSION = 'AW-11124369234/gxQ4COLSmaYcENLOwbgp';
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href*="wa.me"]');
     if (!link) return;
 
-    // Identifica origem do clique pra segmentar relatórios
-    let origem = 'outro';
-    if (link.classList.contains('whatsapp-float')) origem = 'botao_flutuante';
-    else if (link.classList.contains('nav-cta')) origem = 'navbar';
-    else if (link.closest('.mobile-nav')) origem = 'menu_mobile';
-    else if (link.closest('.hero') && !link.closest('.specialty-hero')) origem = 'hero_home';
-    else if (link.closest('.specialty-hero')) origem = 'hero_especialidade';
-    else if (link.closest('.cta-section')) origem = 'cta_final';
-    else if (link.closest('.thanks-next-step')) origem = 'pagina_obrigado';
-    else if (link.closest('.footer')) origem = 'rodape';
-    else if (link.classList.contains('btn-primary')) origem = 'cta_secao';
+    if (passaPelaTriagem(link)) {
+      e.preventDefault();
+      abrirTriagem(link);
+      return;
+    }
+
+    const origem = link.closest('.triagem') ? triagem.origem : origemDoLink(link);
 
     const payload = {
       origem_clique: origem,
