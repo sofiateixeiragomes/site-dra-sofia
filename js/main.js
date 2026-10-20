@@ -108,17 +108,57 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --- Pré-triagem antes do WhatsApp ---
-  // Três toques montam a mensagem: quem só clicou por curiosidade tende a parar aqui,
-  // e a secretária recebe contexto para uma primeira resposta pessoal.
+  // Algumas perguntas de toque filtram quem não está no perfil (menor de 18 anos,
+  // quem precisa de presencial ou de convênio) e montam a mensagem para a secretária.
   // As respostas vão apenas para o texto do WhatsApp. Nada é salvo nem enviado a
   // analytics, porque o motivo da consulta é dado de saúde.
+  const SAIDAS = {
+    menor: {
+      titulo: 'A Dra. Sofia atende apenas adultos',
+      texto: 'O atendimento é para pessoas com 18 anos ou mais. Para crianças e adolescentes, o indicado é procurar um psiquiatra da infância e adolescência.'
+    },
+    presencial: {
+      titulo: 'O atendimento é somente online',
+      texto: 'Todas as consultas são por videochamada, sem atendimento presencial. Se a consulta online fizer sentido para você, é só voltar e continuar.'
+    },
+    convenio: {
+      titulo: 'O atendimento é somente particular',
+      texto: 'A Dra. Sofia não atende por convênio. Depois da consulta, você recebe recibo médico para dedução no Imposto de Renda. Se o atendimento particular fizer sentido para você, é só voltar e continuar.'
+    }
+  };
+
   const TRIAGEM = [
     {
       id: 'quem',
       pergunta: 'Para quem é a consulta?',
       opcoes: [
         { rotulo: 'Para mim', linha: 'A consulta é para mim.' },
-        { rotulo: 'Para um familiar', linha: 'A consulta é para um familiar.' }
+        { rotulo: 'Para um familiar ou outra pessoa', linha: 'A consulta é para um familiar ou outra pessoa.' }
+      ]
+    },
+    {
+      id: 'idade',
+      so: (r) => r.quem && r.quem.rotulo !== 'Para mim',
+      pergunta: 'A pessoa tem 18 anos ou mais?',
+      opcoes: [
+        { rotulo: 'Sim, tem 18 anos ou mais', linha: 'A pessoa tem 18 anos ou mais.' },
+        { rotulo: 'Não, tem menos de 18 anos', saida: 'menor' }
+      ]
+    },
+    {
+      id: 'online',
+      pergunta: 'A consulta é online, por videochamada. Isso funciona para você?',
+      opcoes: [
+        { rotulo: 'Sim, online funciona para mim', linha: '' },
+        { rotulo: 'Preciso de atendimento presencial', saida: 'presencial' }
+      ]
+    },
+    {
+      id: 'particular',
+      pergunta: 'O atendimento é particular, sem convênio. Isso funciona para você?',
+      opcoes: [
+        { rotulo: 'Sim, atendimento particular', linha: '' },
+        { rotulo: 'Preciso usar meu convênio', saida: 'convenio' }
       ]
     },
     {
@@ -143,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  const triagem = { dialog: null, corpo: null, passos: [], respostas: [], etapa: 0, base: '', ref: '', destino: '', origem: '' };
+  const triagem = { dialog: null, corpo: null, passos: [], respostas: {}, etapa: 0, saida: '', base: '', ref: '', destino: '', origem: '' };
 
   const criar = (tag, classe, texto) => {
     const node = document.createElement(tag);
@@ -152,14 +192,30 @@ document.addEventListener('DOMContentLoaded', () => {
     return node;
   };
 
+  // Perguntas que valem para as respostas dadas até agora (a de idade só aparece para outra pessoa)
+  const passosVisiveis = () => triagem.passos.filter(p => !p.so || p.so(triagem.respostas));
+
   const mensagemTriagem = () =>
-    [triagem.base].concat(triagem.respostas.filter(Boolean)).join('\n') + triagem.ref;
+    [triagem.base]
+      .concat(passosVisiveis().map(p => triagem.respostas[p.id] && triagem.respostas[p.id].linha).filter(Boolean))
+      .join('\n') + triagem.ref;
 
   const renderTriagem = () => {
-    const { corpo, passos, etapa } = triagem;
+    const { corpo, etapa } = triagem;
+    const passos = passosVisiveis();
     corpo.textContent = '';
 
-    if (etapa < passos.length) {
+    if (triagem.saida) {
+      const saida = SAIDAS[triagem.saida];
+      const fechar = criar('button', 'btn btn-outline triagem-enviar', 'Fechar');
+      fechar.type = 'button';
+      fechar.addEventListener('click', () => triagem.dialog.close());
+      corpo.append(
+        criar('h2', 'triagem-pergunta', saida.titulo),
+        criar('p', 'triagem-mensagem', saida.texto),
+        fechar
+      );
+    } else if (etapa < passos.length) {
       const passo = passos[etapa];
       corpo.append(
         criar('p', 'triagem-progresso', 'Pergunta ' + (etapa + 1) + ' de ' + passos.length),
@@ -170,8 +226,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const botao = criar('button', 'triagem-opcao', opcao.rotulo);
         botao.type = 'button';
         botao.addEventListener('click', () => {
-          triagem.respostas[etapa] = opcao.linha;
-          triagem.etapa = etapa + 1;
+          triagem.respostas[passo.id] = opcao;
+          if (opcao.saida) {
+            triagem.saida = opcao.saida;
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'triagem_whatsapp_saida', motivo_saida: opcao.saida, origem_clique: triagem.origem });
+          } else {
+            triagem.etapa = etapa + 1;
+          }
           renderTriagem();
         });
         opcoes.append(botao);
@@ -189,15 +251,17 @@ document.addEventListener('DOMContentLoaded', () => {
         criar('h2', 'triagem-pergunta', 'Sua mensagem para a equipe'),
         criar('p', 'triagem-mensagem', mensagem),
         enviar,
-        criar('p', 'triagem-aviso', 'Consulta online, por videochamada. Atendimento particular, sem convênios. A equipe responde no horário comercial com os horários disponíveis e o valor.')
+        criar('p', 'triagem-aviso', 'A equipe responde no horário comercial com os horários disponíveis e o valor.')
       );
     }
 
-    if (etapa > 0) {
+    if (etapa > 0 || triagem.saida) {
       const voltar = criar('button', 'triagem-voltar', '← Voltar');
       voltar.type = 'button';
       voltar.addEventListener('click', () => {
-        triagem.etapa = etapa - 1;
+        // Da tela de saída, volta para a pergunta que levou a ela
+        if (triagem.saida) triagem.saida = '';
+        else triagem.etapa = etapa - 1;
         renderTriagem();
       });
       corpo.append(voltar);
@@ -234,8 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
     triagem.origem = origemDoLink(link);
     // Nas páginas de especialidade a mensagem já diz o motivo
     triagem.passos = TRIAGEM.filter(p => !(p.id === 'motivo' && /página sobre/i.test(triagem.base)));
-    triagem.respostas = [];
+    triagem.respostas = {};
     triagem.etapa = 0;
+    triagem.saida = '';
 
     renderTriagem();
     triagem.dialog.showModal();
